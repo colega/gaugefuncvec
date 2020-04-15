@@ -1,0 +1,23 @@
+# use the latest ubuntu environment (18.04) available on travis
+dist: bionic
+
+language: go
+
+env:
+ - GOLANGCILINT_VERSION=v1.24.0
+go:
+  - 1.14.x
+
+install:
+  - go mod download
+
+# Only clone the most recent commit.
+git:
+  depth: 1
+
+before_script:
+  - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $GOPATH/bin $GOLANGCILINT_VERSION
+
+script:
+  - golangci-lint run
+  - go test -v -race ./...
