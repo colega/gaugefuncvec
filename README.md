@@ -1,5 +1,9 @@
 # Gauge Function Vector for Prometheus (golang)
 
+[![Build Status](https://travis-ci.org/colega/gaugefuncvec.svg?branch=master)](https://travis-ci.org/colega/gaugefuncvec)
+[![Coverage Status](https://coveralls.io/repos/github/colega/gaugefuncvec/badge.svg?branch=master)](https://coveralls.io/github/colega/gaugefuncvec?branch=master)
+[![GoDoc](https://godoc.org/github.com/colega/gaugefuncvec?status.svg)](https://godoc.org/github.com/colega/gaugefuncvec)
+
 ## Summary
 
 Like `prometheus.GaugeFunc` but with labels and one function per label.
