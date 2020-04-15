@@ -20,4 +20,9 @@ before_script:
 
 script:
   - golangci-lint run
-  - go test -v -race ./...
+  - go test -coverprofile=coverage.out -covermode=atomic -race ./...
+
+
+after_success:
+  - go get github.com/mattn/goveralls
+  - goveralls -coverprofile=coverage.out -service=travis-ci
